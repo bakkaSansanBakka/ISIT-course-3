@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+            http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <display-name>JavaLab1</display-name>
+
+    <!-- 1 -->
+
+    <servlet>
+        <servlet-name>Sss</servlet-name>
+        <servlet-class>Sss</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Sss</servlet-name>
+        <url-pattern>/Sss</url-pattern>
+    </servlet-mapping>
+
+    <!-- 2 -->
+
+    <servlet>
+        <servlet-name>Ppp</servlet-name>
+        <servlet-class>Ppp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Ppp</servlet-name>
+        <url-pattern>/Ppp</url-pattern>
+    </servlet-mapping>
+
+    <!-- 3 -->
+
+    <servlet>
+        <servlet-name>Ggg</servlet-name>
+        <servlet-class>Ggg</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Ggg</servlet-name>
+        <url-pattern>/Ggg</url-pattern>
+    </servlet-mapping>
+
+    <!-- 4 -->
+
+    <servlet>
+        <servlet-name>PppRedirect</servlet-name>
+        <servlet-class>PppRedirect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PppRedirect</servlet-name>
+        <url-pattern>/PppRedirect</url-pattern>
+    </servlet-mapping>
+
+    <!-- 5 -->
+
+    <servlet>
+        <servlet-name>GggRedirect</servlet-name>
+        <servlet-class>GggRedirect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GggRedirect</servlet-name>
+        <url-pattern>/GggRedirect</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>address.html</welcome-file>
+        <welcome-file>education.html</welcome-file>
+        <welcome-file>servletForward.html</welcome-file>
+    </welcome-file-list>
+</web-app>

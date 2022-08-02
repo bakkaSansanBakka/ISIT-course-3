@@ -1,0 +1,5 @@
+1:DllUnRegisterServer 6BE40000
+2:Unregister szKey: 02B0E54C
+2:Unregister szVerIndProgID: 6BE66438
+2:Unregister szProgID: 6BE66420
+1:DllUnRegisterServer rc = 0

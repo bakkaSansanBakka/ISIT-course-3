@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-httpclient-3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/commons-httpclient-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

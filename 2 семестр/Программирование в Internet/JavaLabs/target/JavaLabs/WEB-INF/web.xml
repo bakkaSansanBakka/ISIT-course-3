@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         version="2.5"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+<display-name>JavaLabs</display-name>
+
+    <security-role>
+        <role-name>Role011</role-name>
+    </security-role>
+
+<!--    <security-constraint>-->
+<!--        <web-resource-collection>-->
+<!--            <web-resource-name>JAAS Basic</web-resource-name>-->
+<!--            <url-pattern>/JAASBasicAuthServlet</url-pattern>-->
+<!--            <http-method>GET</http-method>-->
+<!--            <http-method>POST</http-method>-->
+<!--        </web-resource-collection>-->
+<!--        <auth-constraint>-->
+<!--            <role-name>Role011</role-name>-->
+<!--        </auth-constraint>-->
+<!--    </security-constraint>-->
+<!--    <login-config>-->
+<!--        <auth-method>BASIC</auth-method>-->
+<!--    </login-config>-->
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JAAS Form</web-resource-name>
+            <url-pattern>/JAASFormAuthServlet</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+<!--        <web-resource-collection>-->
+<!--            <web-resource-name>JAAS Form index.jsp</web-resource-name>-->
+<!--            <url-pattern>/index.jsp</url-pattern>-->
+<!--            <http-method>GET</http-method>-->
+<!--            <http-method>POST</http-method>-->
+<!--        </web-resource-collection>-->
+        <auth-constraint>
+            <role-name>Role011</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/pages/lab22/login.jsp</form-login-page>
+            <form-error-page>/pages/lab22/errorLogin.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <context-param>
+        <description>HTML page URL</description>
+        <param-name> URL1</param-name>
+        <param-value>http://192.168.140.92:8080/JavaLabs_war/pages/lab6/URL1htmlPage.html</param-value>
+    </context-param>
+
+    <context-param>
+        <description>Servlet URL</description>
+        <param-name> URL2</param-name>
+        <param-value>http://192.168.140.92:8080/JavaLabs_war/afternoon</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>doc-dir</param-name>
+        <param-value>E:/File</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>webdavtoken</param-name>
+        <param-value>KruaSunny:lktanaynglcnaoif</param-value>
+    </context-param>
+
+    <!-- Servlets -->
+    <!-- 1 -->
+
+      <servlet>
+        <servlet-name>Sss</servlet-name>
+        <servlet-class>lab2.Sss</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+        <servlet-name>Sss</servlet-name>
+        <url-pattern>/Sss</url-pattern>
+      </servlet-mapping>
+
+    <!-- 2 -->
+
+      <servlet>
+        <servlet-name>Ppp</servlet-name>
+        <servlet-class>lab3.Ppp</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+        <servlet-name>Ppp</servlet-name>
+        <url-pattern>/Ppp</url-pattern>
+      </servlet-mapping>
+
+    <!-- 3 -->
+
+      <servlet>
+        <servlet-name>Ggg</servlet-name>
+        <servlet-class>lab3.Ggg</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+        <servlet-name>Ggg</servlet-name>
+        <url-pattern>/Ggg</url-pattern>
+      </servlet-mapping>
+
+    <!-- 4 -->
+
+      <servlet>
+        <servlet-name>PppRedirect</servlet-name>
+        <servlet-class>lab3.PppRedirect</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+        <servlet-name>PppRedirect</servlet-name>
+        <url-pattern>/PppRedirect</url-pattern>
+      </servlet-mapping>
+
+    <!-- 5 -->
+
+      <servlet>
+        <servlet-name>GggRedirect</servlet-name>
+        <servlet-class>lab3.GggRedirect</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+        <servlet-name>GggRedirect</servlet-name>
+        <url-pattern>/GggRedirect</url-pattern>
+      </servlet-mapping>
+
+    <!-- 6 -->
+
+    <servlet>
+        <servlet-name>afternoon</servlet-name>
+        <servlet-class>lab4.afternoon</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>afternoon</servlet-name>
+        <url-pattern>/afternoon</url-pattern>
+    </servlet-mapping>
+
+    <!-- 7 -->
+
+    <servlet>
+        <servlet-name>Jjj</servlet-name>
+        <servlet-class>lab4.Jjj</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Jjj</servlet-name>
+        <url-pattern>/Jjj</url-pattern>
+    </servlet-mapping>
+
+    <!-- 8 -->
+
+    <servlet>
+        <servlet-name>TttTagsServlet</servlet-name>
+        <servlet-class>lab5.TttTagsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TttTagsServlet</servlet-name>
+        <url-pattern>/TttTagsServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 9 -->
+
+    <servlet>
+        <servlet-name>InitParamsServlet</servlet-name>
+        <servlet-class>lab6.GETInitialisationParamsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InitParamsServlet</servlet-name>
+        <url-pattern>/InitParamsServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 10 -->
+
+    <servlet>
+        <servlet-name>CccContextAtributesServlet</servlet-name>
+        <servlet-class>lab6.CccContextAtributesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CccContextAtributesServlet</servlet-name>
+        <url-pattern>/CccContextAtributesServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 11 -->
+
+    <servlet>
+        <servlet-name>CccRequestAttributes</servlet-name>
+        <servlet-class>lab7.CccRequestAttributes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CccRequestAttributes</servlet-name>
+        <url-pattern>/CccRequestAttributes</url-pattern>
+    </servlet-mapping>
+
+    <!-- 12 -->
+
+    <servlet>
+        <servlet-name>CccSessionAttributes</servlet-name>
+        <servlet-class>lab7.CccSessionAttributes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CccSessionAttributes</servlet-name>
+        <url-pattern>/CccSessionAttributes</url-pattern>
+    </servlet-mapping>
+
+    <!-- 13 -->
+
+    <servlet>
+        <servlet-name>Aaa</servlet-name>
+        <servlet-class>lab8.Aaa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Aaa</servlet-name>
+        <url-pattern>/Aaa</url-pattern>
+    </servlet-mapping>
+
+    <!-- 14 -->
+
+    <servlet>
+        <servlet-name>Bbb</servlet-name>
+        <servlet-class>lab8.Bbb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Bbb</servlet-name>
+        <url-pattern>/Bbb</url-pattern>
+    </servlet-mapping>
+
+    <!-- 15 -->
+
+    <servlet>
+        <servlet-name>Ccc</servlet-name>
+        <servlet-class>lab9.Ccc</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Ccc</servlet-name>
+        <url-pattern>/Ccc</url-pattern>
+    </servlet-mapping>
+
+    <!-- 16 -->
+
+    <servlet>
+        <servlet-name>JDBCServlet</servlet-name>
+        <servlet-class>lab20.JDBCServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JDBCServlet</servlet-name>
+        <url-pattern>/JDBCServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 17 -->
+
+    <servlet>
+        <servlet-name>JDBCProcedureServlet</servlet-name>
+        <servlet-class>lab20.JDBCProcedureServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JDBCProcedureServlet</servlet-name>
+        <url-pattern>/JDBCProcedureServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 18 -->
+
+    <servlet>
+        <servlet-name>SumServlet</servlet-name>
+        <servlet-class>lab21.SumServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SumServlet</servlet-name>
+        <url-pattern>/SumServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 19 -->
+
+    <servlet>
+        <servlet-name>RandomArrayServletXML</servlet-name>
+        <servlet-class>lab21.RandomArrayServletXML</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RandomArrayServletXML</servlet-name>
+        <url-pattern>/RandomArrayServletXML</url-pattern>
+    </servlet-mapping>
+
+    <!-- 20 -->
+
+    <servlet>
+        <servlet-name>RandomArrayServletJSON</servlet-name>
+        <servlet-class>lab21.RandomArrayServletJSON</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RandomArrayServletJSON</servlet-name>
+        <url-pattern>/RandomArrayServletJSON</url-pattern>
+    </servlet-mapping>
+
+    <!-- 21 -->
+
+    <servlet>
+        <servlet-name>JAASBasicAuthServlet</servlet-name>
+        <servlet-class>lab22.JAASBasicAuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JAASBasicAuthServlet</servlet-name>
+        <url-pattern>/JAASBasicAuthServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 22 -->
+
+    <servlet>
+        <servlet-name>JAASFormAuthServlet</servlet-name>
+        <servlet-class>lab22.JAASFormAuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JAASFormAuthServlet</servlet-name>
+        <url-pattern>/JAASFormAuthServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 23 -->
+
+    <servlet>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <servlet-class>lab23.DownloadFileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <url-pattern>/DownloadFileServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 24 -->
+
+    <servlet>
+        <servlet-name>WebDavServlet</servlet-name>
+        <servlet-class>lab24.WebDavServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>WebDavServlet</servlet-name>
+        <url-pattern>/WebDavServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filters -->
+
+    <filter>
+        <filter-name>F1</filter-name>
+        <filter-class>lab9.F1</filter-class>
+    </filter>
+    <filter>
+        <filter-name>F2</filter-name>
+        <filter-class>lab9.F2</filter-class>
+    </filter>
+    <filter>
+        <filter-name>F3</filter-name>
+        <filter-class>lab9.F3</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>F1</filter-name>
+        <url-pattern>/Ccc</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>F2</filter-name>
+        <url-pattern>/Ccc</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>F3</filter-name>
+        <url-pattern>/Ccc</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>F2</filter-name>
+        <url-pattern>/pages/lab7/CccSessionAttributesPage.jsp</url-pattern>
+    </filter-mapping>
+
+    <!-- Listeners -->
+
+    <listener>
+        <listener-class>lab9.L1</listener-class>
+    </listener>
+    <listener>
+        <listener-class>lab9.L2</listener-class>
+    </listener>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>TttUseTags.jsp</welcome-file>
+        <welcome-file>GetInitialisationParameters.jsp</welcome-file>
+        <welcome-file>CccContextAtributes.jsp</welcome-file>
+
+        <welcome-file>address.html</welcome-file>
+      <welcome-file>education.html</welcome-file>
+      <welcome-file>servletForward.html</welcome-file>
+      <welcome-file>URL1htmlPage.html</welcome-file>
+    </welcome-file-list>
+</web-app>

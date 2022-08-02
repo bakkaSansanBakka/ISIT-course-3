@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body style="font-size: 20px">
+    <div>Potapeyko P. P.</div>
+    <a href="address.html">Address</a>
+    <br><a href="education.html">Education</a>
+    <br><a href="Sss?firstname=Polina&lastname=Potapeyko">Sss servlet request</a>
+    <p>
+        <img src="images/Rock.gif" width="500px" height="300px"/>
+    </p>
+
+    <form action="Sss" method="post">
+        <label for="firstname">firstname</label>
+        <input type="text" id="firstname" name="firstname" size="20">
+
+        <br><label for="lastname">lastname</label>
+        <input type="text" id="lastname" name="lastname" size="20">
+
+        <br><input type = "submit" name="press" value = "OK" size = "20">
+        <input type = "submit" name= "press" value = "Cancel" size = "20">
+    </form>
+
+    <p>FORWARD</p>
+    <a href="Ppp?param=ppp">Ppp servlet GET request </a>
+    <p>Форма для вызова Ppp сервлета</p>
+    <form action="Ppp" method="post">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" size="20">
+
+        <br><label for="email">Email</label>
+        <input type="email" id="email" name="email" size="20">
+
+        <br><input type = "submit" name="press" value = "OK" size = "20">
+        <input type = "submit" name= "press" value = "Cancel" size = "20">
+    </form>
+
+    <br><a href="Ggg">Go to html page using servlet forward</a>
+
+    <p>REDIRECT</p>
+    <a href="PppRedirect?param=ppp">PppRedirect servlet GET request </a>
+    <p>Форма для вызова сервлета PppRedirect</p>
+    <form action="PppRedirect" method="post">
+        <label for="phoneNumber">Phone number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" size="20">
+
+        <br><label for="emailAddr">Email</label>
+        <input type="email" id="emailAddr" name="emailAddr" size="20">
+
+        <br><input type = "submit" name="press" value = "OK" size = "20">
+        <input type = "submit" name= "press" value = "Cancel" size = "20">
+    </form>
+
+    <p>Forming HTTP request and response in servlets (comment forward section in servlet classes)</p>
+    <a href="Ppp?firstname=Polina&lastname=Potapeyko">Ppp form GET request in servlet</a>
+</body>
+</html>

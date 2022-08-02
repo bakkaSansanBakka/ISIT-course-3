@@ -1,0 +1,89 @@
+<project name="AS_3011PPP" default = "copy" >
+    <target name="init">
+        <echo message="Building JavaLab Project" />
+        <property name="localServer" value="E:\apache-tomcat-9.0.59\webapps\JavaLabs\" />
+        <property name="remoteServer" value="E:\3 курс\2 семестр\Программирование в Internet\TomcatShared\JavaLabs\" />
+        <property name="work" value="E:\3 курс\2 семестр\Программирование в Internet\лабы\WorkspaceJavaProject\" />
+        <property name="dependencies" value="E:\3 курс\2 семестр\Программирование в Internet\лабы\WorkspaceJavaProject\lib\"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <delete verbose="true">
+            <fileset dir="${work}build"/>
+        </delete>
+
+        <javac srcdir = "${work}" destdir = "${work}build">
+            <classpath>
+                <fileset dir="${dependencies}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="create" depends ="compile">
+        <delete dir= "${localServer}"/>
+        <delete dir= "${remoteServer}"/>
+
+        <mkdir dir= "${localServer}" />
+        <mkdir dir= "${remoteServer}" />
+
+        <mkdir dir= "${localServer}WEB-INF" />
+        <mkdir dir= "${remoteServer}WEB-INF" />
+
+        <mkdir dir= "${localServer}images" />
+        <mkdir dir= "${remoteServer}images" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy file= "${work}WEB-INF\web.xml"
+              todir="${localServer}WEB-INF\" />
+
+        <copy file= "${work}WEB-INF\web.xml"
+              todir="${remoteServer}WEB-INF\" />
+
+        <copy file= "${work}index.html"
+              todir="${localServer}" />
+
+        <copy file= "${work}index.html"
+              todir="${remoteServer}" />
+
+        <copy file= "${work}address.html"
+              todir="${localServer}" />
+
+        <copy file= "${work}address.html"
+              todir="${remoteServer}" />
+
+        <copy file= "${work}education.html"
+              todir="${localServer}" />
+
+        <copy file= "${work}education.html"
+              todir="${remoteServer}" />
+
+        <copy file= "${work}servletForward.html"
+              todir="${localServer}" />
+
+        <copy file= "${work}servletForward.html"
+              todir="${remoteServer}" />
+
+        <copy file= "${work}servletRedirect.html"
+              todir="${localServer}" />
+
+        <copy file= "${work}servletRedirect.html"
+              todir="${remoteServer}" />
+
+        <copy file= "${work}images\Rock.gif"
+              todir="${localServer}images\" />
+
+        <copy file= "${work}images\Rock.gif"
+              todir="${remoteServer}images\" />
+
+        <copy todir="${localServer}\WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+
+        <copy todir="${remoteServer}\WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+    </target>
+</project>
